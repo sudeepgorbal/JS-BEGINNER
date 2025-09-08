@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Interactive Page</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: #444;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="color"] {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    button {
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: 5px 0;
+    }
+
+    button:hover {
+      background: #004d40;
+    }
+
+    #numbers {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    #numbers p {
+      background: #e0f2f1;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    #secret {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #fff3e0;
+      border: 1px dashed #ff9800;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="heading">Welcome!</h1>
+
+    <!-- Greeting -->
+    <label for="nameInput">Enter your name:</label>
+    <input id="nameInput" type="text" placeholder="Type your name here"/>
+    <button id="greetBtn">Greet Me</button>
+
+    <hr/>
+
+    <!-- Background color -->
+    <label for="colorInput">Pick a background color:</label>
+    <input id="colorInput" type="color" value="#ffffff"/>
+    <button id="applyColor">Apply Color</button>
+
+    <hr/>
+
+    <!-- Numbers -->
+    <label for="numInput">Print numbers up to:</label>
+    <input id="numInput" type="number" min="1" placeholder="Enter a number"/>
+    <button id="printBtn">Print</button>
+    <div id="numbers"></div>
+
+    <hr/>
+
+    <!-- Secret toggle -->
+    <button id="toggleSecret">Show/Hide Secret</button>
+    <div id="secret" class="hidden">🎉 This is a secret box! Click the button again to hide me.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
